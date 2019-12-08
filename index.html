@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CSS Grid Layout Presentation</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/style.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>CSS Grid Layout</h1></section>
+				<section>
+					<h2>What is the Grid Layout?</h2>
+					<p class="align-left">
+						Grid Layout is a new layout model for CSS that has powerful abilities to control the sizing and positioning of boxes and their contents. 
+					</p>
+				</section>
+				<section>
+					<h2>Grid vs Flexible Box</h2>
+					<p class="align-left">Flexible Box Layout is single-axis–oriented.
+						<img src="img/flex-layout.png">
+						<span class="block small-text">Exemplary Flex Layout Example</span>
+					</p>
+					<p class="align-left">Grid Layout is optimized for 2-dimensional layouts. These are layouts in which alignment of content is desired in both dimensions.
+						<img src="img/grid-layout.png">
+						<span class="block small-text">Exemplary Grid Layout Example</span>
+					</p>
+				</section>
+				<section>
+					<h2>Browser Support</h2>
+					<img src="img/browser-support.jpg">
+				</section>
+				<section>
+					<h2>Grid Elements</h2>
+					<ul>
+						<li>Grid container</li>
+						<li>Grid items</li>
+					</ul>
+					<p class="align-left">Example</p>
+					<div class="align-left">
+						<div>&lt;div class="grid-container"&gt;</div>
+							<div>&lt;div class="grid-item">1&lt;/div&gt;</div>
+							<div>&lt;div class="grid-item">2&lt;/div&gt;</div>
+							<div>&lt;div class="grid-item">3&lt;/div&gt;</div>
+						<div>&lt;/div&gt;</div>
+					</div>
+				</section>
+				<section>
+					<h2>Display Property</h2><br>
+						<p>Example 1</p>
+						<pre>.grid-container {
+	display: grid;
+}</pre>
+							<p>Example 2</p>
+							<pre>.grid-container {
+	display: inline-grid;
+}</pre>
+				</section>
+				<section>
+					<section>
+						<h2>Grid Layout Concepts</h2>
+						<p class="align-left">Other Grid Layout concepts are grid columns, grid rows, grid gaps, grid cells, grid areas and grid lines.</p>
+					</section>
+					<section>
+							<h3>Grid Columns</h3>
+							<p>The grid columns are vertical lines of grid items.</p>
+							<img src="img/grid_columns.jpg">					
+					</section>
+					<section>
+						<h3>Grid Rows</h3>
+						<p>The grid rows are horizontal lines of grid items.</p>
+						<img src="img/grid_rows.jpg">
+					</section>
+					<section>
+						<h3>Grid Gaps</h3>
+						<p>The grid gaps are spaces between each column or row.</p>
+						<img src="img/grid_gaps.jpg">
+					</section>
+					<section>
+						<h3>Grid Cell</h3>
+						<p>The grid cell is the intersection of a grid row and a grid column.</p>
+						<img src="img/grid_cell.jpg">	
+					</section>
+					<section>
+						<h3>Grid Area</h3>
+						<p>The grid area is the logical space used to lay out one or more grid items. The grid area consists of one or more adjacent grid cells.</p>
+						<img src="img/grid_area.jpg">	
+					</section>
+					<section>
+						<h3>Grid Lines</h3>
+						<p class="align-left">The lines between grid columns are called column lines. The lines between grid rows are called row lines.</p>
+						<img src="img/grid_lines.jpg">
+					</section>
+					<section>
+						<h3>Grid Lines</h3>
+						<p class="align-left">A grid item references the grid lines to determine its position within the grid using the grid-placement properties.</p>
+						<p>Examples</p>
+						<pre>.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}</pre>
+						<pre>.item1 {
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+</pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Grid Container’s properties</h2>
+						<p>The grid container has several CSS properties.</p>
+					</section>
+					<section>
+						<h3>Grid-template-columns property</h3>
+						<p class="align-left">defines the number of columns in grid layout and can define the width of each column.</p>
+						<p>Examples</p>
+						<pre>.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;			
+}</pre>
+						<pre>.grid-container {
+	display: grid;
+	grid-template-columns: 80px 200px auto 40px;
+}
+</pre>
+					</section>
+					<section>
+						<h3>Grid-template-rows property</h3>
+						<p>defines the height of each row.</p><br>
+						<p>Example</p>
+						<pre>.grid-container {
+	display: grid;
+	grid-template-rows: 80px 200px;									
+}</pre>
+					</section>
+					<section>
+						<h2>Justify-content property</h2>
+						<p class="align-left">allows to align the whole grid inside the container and has following values: 
+							<em>start , end, center, space-evenly, space-between and space-around.</em>
+						</p>
+					</section>
+					<section>
+						<h2>Align-content property</h2>
+						<p class="align-left">allows to vertically align the whole grid inside the container and has the same values like the justify-content property.</p>
+					</section>
+				</section>
+				<section>
+						<section>
+							<h2>Grid Item’s properties</h2>
+							<p>Grid item has several CSS properties.</p>
+						</section>
+						<section>
+							<h3>Grid-column property</h3>
+							<p class="align-left">defines on which column(s) to place an item. With this property, we define where the item will start, and where the item will end.</p>
+							<p>Examples</p>
+							<pre>.item1 {
+	grid-column: 1 / 5;
+}
+</pre>
+							<pre>.item1 {
+	grid-column: 1 / span 3;
+}								
+</pre>
+						</section>
+						<section>
+							<h3>Grid-row property</h3>
+							<p>defines on which row to place an item.</p><br>
+							<p>Examples</p>
+							<pre>.item1 {
+	grid-row: 1 / 4;
+}
+</pre>
+							<pre>.item1 {
+	grid-row: 1 / span 2;
+}
+</pre>
+						</section>
+						<section>
+							<h3>Grid-area property</h3>
+							<p class="align-left">can be used as a shorthand property for grid-row-start, grid-column-start, grid-row-end and grid-column-end properties.</p>
+							<p>Examples</p>
+							<pre>.item1 {
+	grid-area: 1 / 2 / 5 / 6;
+}								
+</pre>
+							<pre>.item1 {
+	grid-area: 2 / 1 / span 2 / span 3;
+}
+</pre>
+						</section>
+						<section>
+							<h3>Naming Grid Items</h3>
+							<p class="align-left">The grid-area property can also be used to assign names to grid items.
+									Named grid items can be referred to by the grid-template-areas property of the grid container.
+									</p>
+							<p>Example</p>
+							<pre>.item1 {
+	grid-area: myArea;
+}
+.grid-container {
+	grid-template-areas: 'myArea myArea myArea myArea myArea';
+}							
+</pre>
+						</section>
+						<section>
+							<h3>Order of the Items</h3>
+							<p class="align-left">The Grid Layout allows us to position the items anywhere we like.
+									We can re-arrange the order for certain screen sizes, by using media queries.
+									</p>
+							<p>Example</p>
+							<pre>
+.item1 { grid-area: 1 / 3 / 2 / 4; }
+.item2 { grid-area: 2 / 3 / 3 / 4; }
+.item3 { grid-area: 1 / 1 / 2 / 2; }
+									
+@media only screen and (max-width: 500px) {
+.item1 { grid-area: 1 / span 3 / 2 / 4; }
+.item2 { grid-area: 3 / 3 / 4 / 4; }
+.item3 { grid-area: 2 / 1 / 3 / 2; }
+}										
+</pre>
+						</section>
+					</section>
+					<section>
+							<h3>Thank you for your attention</h3>
+					</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
